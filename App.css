@@ -1,0 +1,188 @@
+/* RESET */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* MAIN */
+.main-content {
+  position: relative;
+  min-height: 100vh;   /* IMPORTANT FIX */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* WRAPPER */
+.content-wrapper {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BACKGROUND (FIXED FULL SCREEN) */
+.car-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+/* VIDEO */
+.video-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TITLE BOX (OLD STYLE RESTORED) */
+/* TITLE BOX */
+.title-box {
+  width: 100%;
+  padding: 25px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+/* TITLE TEXT */
+/* TITLE TEXT */
+.title-text {
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ICON */
+.icon {
+  height: 1.5em;        
+  width: auto;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.icon-row {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* FORM */
+.form-container {
+  width: 100%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* LABELS */
+.form-container label {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+/* INPUT + SELECT (ALL BLACK TEXT FIXED) */
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;              /* 🔥 FIX */
+  box-sizing: border-box;
+}
+
+/* PLACEHOLDER (KEEP SIMPLE, NOT GREY HEAVY) */
+.form-container input::placeholder {
+  color: #555;
+}
+
+/* REMOVE GREY SELECT ISSUE */
+.form-container select {
+  color: black;
+}
+
+/* BUTTON */
+.predict-btn {
+  margin-top: 25px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #00c6ff;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.predict-btn:hover {
+  background: #009edb;
+}
+
+/* RESULT PAGE */
+.result-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RESULT BOX */
+.result-glass-box {
+  width: 420px;
+  padding: 60px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.result-glass-box h2 {
+  font-size: 25px;
+}
+
+.result-glass-box h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* TOP EDGE INWARD ANIMATION */
+.slide-up {
+  opacity: 0;
+  transform: translateY(-60px) scale(1.02);
+  clip-path: inset(0 0 100% 0 round 0 0 40px 40px);
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  clip-path: inset(0 0 0 0 round 0 0 0 0);
+  transition: 
+    transform 0.7s ease-out,
+    opacity 0.7s ease-out,
+    clip-path 0.7s ease-out;
+}
